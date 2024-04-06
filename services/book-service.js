@@ -28,7 +28,9 @@ async function saveBook(body) {
         description: body.description,
         price: body.price,
         total_reader: body.totalReader,
-        book_type: body.bookType
+        book_type: body.bookType,
+        published: body.published,
+        isbn: body.isbn
     };
 
     const exist = await Book.exists({ _id: { $ne: new mongoose.Types.ObjectId(body._id) }, name: body.bookName });

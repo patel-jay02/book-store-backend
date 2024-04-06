@@ -19,6 +19,8 @@ router.post('/', [
     body('price').notEmpty().withMessage(ValidationMessages.NOT_EMPTY),
     body('totalReader').notEmpty().withMessage(ValidationMessages.NOT_EMPTY),
     body('bookType').notEmpty().withMessage(ValidationMessages.NOT_EMPTY),
+    body('isbn').notEmpty().withMessage(ValidationMessages.NOT_EMPTY),
+    body('published').notEmpty().withMessage(ValidationMessages.NOT_EMPTY),
 ], isAuthenticate, asyncHandler(async (req, res) => {
     return await bookService.saveBook(req.body);
 }));
@@ -30,6 +32,8 @@ router.put('/:_id', [
     body('price').notEmpty().withMessage(ValidationMessages.NOT_EMPTY),
     body('totalReader').notEmpty().withMessage(ValidationMessages.NOT_EMPTY),
     body('bookType').notEmpty().withMessage(ValidationMessages.NOT_EMPTY),
+    body('isbn').notEmpty().withMessage(ValidationMessages.NOT_EMPTY),
+    body('published').notEmpty().withMessage(ValidationMessages.NOT_EMPTY),
 ], isAuthenticate, asyncHandler(async (req) => {
     req.body._id = req.params._id;
     return bookService.saveBook(req.body);

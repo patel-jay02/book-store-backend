@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const BookStoreSchema = mongoose.Schema({
-    
+
     name: {
         type: String,
         unique: true
@@ -20,8 +20,14 @@ const BookStoreSchema = mongoose.Schema({
     },
     book_type: {
         type: String
+    },
+    isbn: {
+        type: String
+    },
+    published: {
+        type: String
     }
-   
+
 }, {
     timestamps: true
 });
